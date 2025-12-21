@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CapAbodaa | لوحة التحكم</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { background-color: #0b0e14; color: #e2e8f0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        .sidebar { background-color: #111827; border-left: 1px solid #1f2937; }
+        .card { background-color: #1f2937; border: 1px solid #374151; transition: 0.3s; }
+        .input-field { background-color: #111827; border: 1px solid #374151; color: white; }
+        .input-field:focus { border-color: #3b82f6; outline: none; }
+        .btn-primary { background: linear-gradient(90deg, #3b82f6, #2563eb); }
+    </style>
+</head>
+<body class="flex min-h-screen">
+
+    <aside class="sidebar w-64 hidden md:flex flex-col p-4 fixed h-full">
+        <div class="text-2xl font-black text-blue-500 mb-10 text-center uppercase tracking-tighter">
+            Cap<span class="text-white">Abodaa</span>
+        </div>
+        
+        <nav class="space-y-2">
+            <a href="#" class="flex items-center gap-3 p-3 bg-blue-600/10 text-blue-500 rounded-xl">
+                <i class="fas fa-cart-plus"></i> <span>طلب جديد</span>
+            </a>
+            <a href="#" class="flex items-center gap-3 p-3 hover:bg-gray-800 rounded-xl transition">
+                <i class="fas fa-list"></i> <span>سجل الطلبات</span>
+            </a>
+            <a href="#" class="flex items-center gap-3 p-3 hover:bg-gray-800 rounded-xl transition">
+                <i class="fas fa-wallet"></i> <span>إضافة رصيد</span>
+            </a>
+            <a href="#" class="flex items-center gap-3 p-3 hover:bg-gray-800 rounded-xl transition">
+                <i class="fas fa-ticket-alt"></i> <span>الدعم الفني</span>
+            </a>
+        </nav>
+
+        <div class="mt-auto p-4 bg-gray-800/50 rounded-2xl text-center">
+            <p class="text-xs text-gray-400">رصيدك في CapAbodaa</p>
+            <p class="text-xl font-bold text-green-400">$0.00</p>
+        </div>
+    </aside>
+
+    <main class="flex-1 md:mr-64 p-6">
+        <header class="flex justify-between items-center mb-8 bg-gray-900 p-4 rounded-2xl border border-gray-800">
+            <h2 class="text-xl font-bold">مرحباً بك، <span class="text-blue-400">كاب عبدالناصر</span></h2>
+            <div class="flex items-center gap-4">
+                <i class="fas fa-bell text-gray-500"></i>
+                <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center font-bold">C</div>
+            </div>
+        </header>
+
+        <div class="max-w-3xl mx-auto">
+            <div class="card p-8 rounded-[25px] shadow-2xl">
+                <h3 class="text-2xl font-bold mb-6 border-b border-gray-700 pb-4">إضافة طلب جديد</h3>
+                
+                <form action="api_process.php" method="POST" class="space-y-6">
+                    <div>
+                        <label class="block text-sm text-gray-400 mb-2">اختر القسم</label>
+                        <select name="category" class="w-full input-field p-4 rounded-xl">
+                            <option>إنستجرام - خدمات CapAbodaa</option>
+                            <option>فيسبوك - لايكات ومتابعين</option>
+                            <option>تيك توك - مشاهدات</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm text-gray-400 mb-2">اختر الخدمة</label>
+                        <select name="service" class="w-full input-field p-4 rounded-xl">
+                            <option value="1">متابعين جودة عالية [ضمان 30 يوم] - $0.50</option>
+                            <option value="2">متابعين حقيقيين [سرعة فائقة] - $1.20</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm text-gray-400 mb-2">الرابط (Link)</label>
+                        <input type="text" name="link" placeholder="أدخل الرابط هنا..." class="w-full input-field p-4 rounded-xl">
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm text-gray-400 mb-2">الكمية</label>
+                            <input type="number" name="quantity" placeholder="1000" class="w-full input-field p-4 rounded-xl">
+                        </div>
+                        <div>
+                            <label class="block text-sm text-gray-400 mb-2">التكلفة</label>
+                            <input type="text" disabled value="$0.00" class="w-full input-field p-4 rounded-xl opacity-50">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="w-full btn-primary p-4 rounded-xl font-bold text-lg shadow-lg shadow-blue-500/20 hover:scale-[1.02] transition">
+                        تأكيد طلبك في CapAbodaa
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
