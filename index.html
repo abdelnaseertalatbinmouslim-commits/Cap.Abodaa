@@ -3,22 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>منظومة معسكر 2026</title>
+    <title>منصة معسكر 2026 - جامعة أسيوط</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 </head>
 <body>
     <div class="main-w">
         <header>
-            <img src="assets/logo.png" class="logo">
-            <h1>منظومة تسجيل المعسكر الدراسي</h1>
-            <p>كلية التربية الرياضية - جامعة أسيوط</p>
+            <div class="logo-box">
+                <img src="assets/logo.png" alt="Logo">
+            </div>
+            <h1>منصة التحقق الرقمي</h1>
+            <p>كلية علوم الرياضة - جامعة أسيوط</p>
         </header>
 
-        <div class="search-w">
-            <input type="text" id="search_in" placeholder="ابحث باسم الطالب..." onkeyup="start_search()">
-            <div id="res_area"></div>
+        <div class="search-container">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="search_in" placeholder="ابحث عن اسم الطالبة هنا..." onkeyup="start_search()">
         </div>
+
+        <div id="res_area"></div>
     </div>
 
     <script src="database.js"></script>
