@@ -17,9 +17,12 @@
             <p>كلية علوم الرياضة - جامعة أسيوط</p>
         </header>
 
-        <div class="search-box">
-            <span class="search-icon"></span>
-            <input type="text" id="search_in" placeholder="ابحثي عن اسمك هنا..." onkeyup="start_search()">
+        <div class="search-container">
+            <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="search_in" placeholder="اكتبي الاسم هنا...">
+            </div>
+            <button id="btn_search" onclick="start_search()">ابـحـث الآن</button>
         </div>
         
         <div id="res_area"></div>
