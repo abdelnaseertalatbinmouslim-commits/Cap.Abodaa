@@ -1,56 +1,55 @@
+/* الألوان الأساسية */
 :root {
-    --bg: #0f172a;
-    --card: #1e293b;
-    --accent: #00d4ff;
+    --bg: #0f172a;      /* لون الخلفية غامق */
+    --card: #1e293b;    /* لون الكارت */
+    --accent: #00d4ff;  /* اللون السماوي للزرار */
     --text: #ffffff;
+    --success: #22c55e; /* لون زرار العرض */
 }
 
 body {
     background-color: var(--bg);
     color: var(--text);
-    font-family: 'Segoe UI', Tahoma, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     display: flex;
     justify-content: center;
-    padding-top: 30px;
-    direction: rtl;
+    padding: 20px;
+    direction: rtl; /* عشان التنسيق عربي من اليمين */
 }
 
 .main-w {
-    width: 95%;
+    width: 100%;
     max-width: 420px;
     background: var(--card);
     padding: 25px;
-    border-radius: 25px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     text-align: center;
 }
 
-.logo-box img { width: 70px; margin-bottom: 10px; }
-header h1 { font-size: 20px; color: var(--accent); margin: 0; }
-header p { font-size: 13px; color: #94a3b8; margin: 5px 0 25px; }
+header h1 { font-size: 22px; color: var(--accent); margin-bottom: 5px; }
+header p { font-size: 14px; color: #94a3b8; margin-bottom: 30px; }
 
+/* صندوق البحث */
 .search-box {
-    position: relative;
-    display: flex;
-    align-items: center;
-    background: #0f172a;
-    border: 2px solid #334155;
+    background: white;
     border-radius: 12px;
-    padding: 0 15px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    overflow: hidden;
 }
 
 #search_in {
     width: 100%;
-    background: transparent;
     border: none;
-    padding: 15px 5px;
-    color: white;
+    padding: 15px;
     font-size: 16px;
     outline: none;
+    text-align: center;
+    color: #000;
 }
 
+/* زرار البحث الكبير */
 #btn_search {
     width: 100%;
     background: var(--accent);
@@ -59,31 +58,36 @@ header p { font-size: 13px; color: #94a3b8; margin: 5px 0 25px; }
     padding: 15px;
     border-radius: 12px;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 17px;
     cursor: pointer;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     transition: 0.3s;
 }
 
-#btn_search:active { transform: scale(0.98); }
+#btn_search:active { transform: scale(0.96); }
 
-/* لضمان نزول الأسماء تحت بعضها */
+/* تنسيق صفوف النتائج - ده اللي بيخليهم تحت بعض */
 .s_row {
     background: #334155;
     padding: 15px;
     border-radius: 12px;
-    margin-bottom: 10px;
-    display: flex;
+    margin-bottom: 12px; /* مسافة بين كل اسم واللي تحته */
+    display: flex;       /* الاسم والزرار في نفس الصف */
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    box-sizing: border-box;
+    box-sizing: border-box; /* يضمن إن المساحة متطلعش بره */
 }
 
-.s_row span { font-size: 14px; text-align: right; flex: 1; }
+.s_row span {
+    font-size: 15px;
+    text-align: right;
+    flex: 1;
+    padding-left: 10px;
+}
 
 .s_row button {
-    background: #22c55e;
+    background: var(--success);
     color: white;
     border: none;
     padding: 8px 15px;
@@ -92,13 +96,20 @@ header p { font-size: 13px; color: #94a3b8; margin: 5px 0 25px; }
     cursor: pointer;
 }
 
+/* شكل الكارنيه النهائي */
 .card-box {
     background: white;
-    color: #000;
-    border-radius: 20px;
+    color: black;
+    border-radius: 15px;
     padding: 20px;
-    margin-top: 15px;
-    border: 5px double #003366;
+    margin-top: 20px;
+    border: 4px double #003366;
 }
 
-#canvas { margin: 15px auto; display: flex; justify-content: center; }
+#canvas {
+    margin: 15px auto;
+    display: flex;
+    justify-content: center;
+}
+
+.card-box h3, .card-box h4 { margin: 2px 0; color: #003366; }
