@@ -1,0 +1,32 @@
+here<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تأكيد البيانات</title>
+    <style>
+        body { font-family: Arial; text-align: center; padding: 40px; background: #f0f0f0; }
+        .box { background: #fff; padding: 25px; border-radius: 12px; border: 2px solid #003366; }
+        .ok { color: green; font-size: 22px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div id="out">جاري فحص الكود...</div>
+    </div>
+    <script src="database.js"></script>
+    <script>
+        const p = new URLSearchParams(window.location.search);
+        const id = p.get('id');
+        const s = _data_provider.find(x => x._id == id);
+        if (s) {
+            document.getElementById('out').innerHTML = '<div class="ok">✔️ الكود صحيح</div><hr>' +
+                '<p>الاسم: ' + s._n + '</p>' +
+                '<p>المجموعة: ' + s._g + '</p>' +
+                '<p>الحالة: ' + s._s + '</p>';
+        } else {
+            document.getElementById('out').innerHTML = "❌ كود غير مسجل";
+        }
+    </script>
+</body>
+</html>
